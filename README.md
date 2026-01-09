@@ -4,18 +4,18 @@ A web-based platform that connects local farmers with bulk buyers for planned pr
 ## Platform Statement
 Farmers in villages face difficulty in selling their produce at the right time and price,while local buyers such as wedding caterers,hotels,and vendors struggle to source vegetables in bulk with certainty.Existing systems like mandis are physical and reactive ,offering no mechanism for advance planning or local-level coordination.
 
-There is lack of a simple digital platfomr that enables farmers, buyers, and local aggregators to coordinate agricultural supply and demand before the actual requirement date.
+There is lack of a simple digital platform that enables farmers, buyers, and local aggregators to coordinate agricultural supply and demand before the actual requirement date.
 
 
 ## Solution Overview
 kisaanconnect-local is a village -level digital coordination platform where multiple farmer post their available products and the timeline of its avalability and buyers will contact those farmers from the platform by analysing its rating and reviews and then decide to buy the product after contacting with farmer.
 
-The platfomr focuses on advance plannng , reduces wastage and improved transparency without replacing existing mandi system.
+The platfomr focuses on advance planning , reduces wastage and improved transparency without replacing existing mandi system.
 
 ## Key Features
 - Farmer registration and login
 - Buyer registration and login
-- Multilingual upport (Emglish,Hindi,Marathi)
+- Multilingual support (Emglish,Hindi,Marathi)
 
 ## User Roles
 - Farmer : Register on the platform and post their product 
@@ -50,7 +50,7 @@ The platfomr focuses on advance plannng , reduces wastage and improved transpare
 - kissanconnect-local: Advance digital coordination,allowing bulk buyers to plan requirments,pre-harvest, advance planning to reduce uncertainty and wastage.
 
 # Project Status
-This Project is crrently under active development.
+This Project is currently under active development.
 
 # Future Scope
 - payment integration
