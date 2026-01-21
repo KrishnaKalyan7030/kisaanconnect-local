@@ -1,9 +1,25 @@
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* NAVBAR */
 .navbar {
@@ -21,6 +37,7 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 /* HERO */
 .hero {
@@ -90,4 +107,61 @@ section {
     background-color: #2e7d32;
     color: white;
     padding: 15px;
+}
+
+
+/* Writing css here for Registration */
+.register-page form {
+  background: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align:center;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background-color: #388e3c;
+}
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
 }
