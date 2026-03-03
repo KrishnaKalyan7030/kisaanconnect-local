@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Products | KisanConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<header class="navbar">
+    <h2>KisanConnect Local</h2>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-product.html" class="btn primary">+ Add Product</a>
+    </nav>
+</header>
+
+<section class="products-container">
+
+    <!-- Header -->
+    <div class="products-header">
+        <h1>🌾 My Products</h1>
+
+        <div class="product-controls">
+            <input type="text" placeholder="Search your products..." class="search-input">
+            <select class="filter-select">
+                <option>All</option>
+                <option>Active</option>
+                <option>Expired</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products-grid">
+
+        <!-- Product Card -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="../images/tomatoes.jpg" alt="Tomatoes">
+                <span class="status active">Active</span>
+            </div>
+
+            <div class="product-content">
+                <h3>Fresh Tomatoes</h3>
+                <p class="price">₹40 / kg</p>
+                <p class="quantity">Available: 120 kg</p>
+                <p class="expiry">Available till: 20 June, 6 PM</p>
+
+                <div class="product-actions">
+                    <button class="btn small">Edit</button>
+                    <button class="btn danger small">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Another Card -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb" alt="Onions">
+                <span class="status expired">Expired</span>
+            </div>
+
+            <div class="product-content">
+                <h3>Organic Onions</h3>
+                <p class="price">₹25 / kg</p>
+                <p class="quantity">Available: 80 kg</p>
+                <p class="expiry">Expired</p>
+
+                <div class="product-actions">
+                    <button class="btn small">Edit</button>
+                    <button class="btn danger small">Delete</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="../js/auth.js"></script>
+
+</body>
+</html>

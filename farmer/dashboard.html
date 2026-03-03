@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="farmer_dashboard_title">Farmer Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- HEADER -->
+   <header class="navbar">
+    <div class="logo">KisanConnect Local</div>
+
+    <div class="nav-right">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <button class="logout-btn">Logout</button>
+
+        <select class="lang-select">
+            <option>English</option>
+            <option>मराठी</option>
+        </select>
+    </div>
+</header>
+
+    <!-- DASHBOARD CONTENT -->
+    <section class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1 id="welcomeText">Welcome Farmer 👨‍🌾</h1>
+            <p>Manage your farm business efficiently</p>
+        </div>
+
+        <!-- Earnings Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>₹ 24,500</h3>
+                <p>Total Earnings</p>
+            </div>
+            <div class="stat-card">
+                <h3>18</h3>
+                <p>Products Listed</p>
+            </div>
+            <div class="stat-card">
+                <h3>9</h3>
+                <p>Orders Received</p>
+            </div>
+            <div class="stat-card">
+                <h3>4.8 ⭐</h3>
+                <p>Farmer Rating</p>
+            </div>
+        </div>
+
+        <!-- Quick Action Section -->
+        <div class="quick-actions">
+
+            <div class="card highlight-card">
+                <h3>Add New Product</h3>
+                <p>List fresh crops and vegetables for buyers</p>
+                <a href="../farmer/add-product.html">
+                    <button class="btn primary">Add Product</button>
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Manage Products</h3>
+                <p>Update prices, stock, and details</p>
+                <a href="../farmer/my-products.html">
+                    <button class="btn">View Products</button>
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>View Orders</h3>
+                <p>Check incoming buyer requests</p>
+                <!-- <button class="btn">See Orders</button> -->
+                <a href="view-orders.html" class="btn primary">See Orders</a>
+            </div>
+
+        </div>
+
+        <!-- Performance Section -->
+        <div class="performance-section">
+            <h2>Performance Overview</h2>
+            <ul>
+                <li>📈 Sales increased by 12% this month</li>
+                <li>🌟 Top product: Fresh Tomatoes</li>
+                <li>🚚 5 pending deliveries</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Scripts -->
+    <script src="../js/language.js"></script>
+    <script src="../js/auth.js"></script>
+
+</body>
+</html>

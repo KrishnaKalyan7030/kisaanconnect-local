@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1>📦 My Orders</h1>
+
+<div id="ordersContainer"></div>
+
+<script>
+const container = document.getElementById("ordersContainer");
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+if(orders.length === 0){
+    container.innerHTML = "<p>No orders yet</p>";
+}
+
+orders.forEach(order => {
+    const div = document.createElement("div");
+    div.className = "order-card";
+
+    div.innerHTML = `
+        <h3>${order.productName}</h3>
+        <p>Price: ₹${order.price}</p>
+        <p>Status: ${order.status}</p>
+    `;
+
+    container.appendChild(div);
+});
+</script>
+
+</body>
+</html>

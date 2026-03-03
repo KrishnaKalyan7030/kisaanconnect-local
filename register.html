@@ -1,38 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Register | KisanConnect Local</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="register_page_title">Register | KisanConnect Local</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="register-page">
 
-  
+  <!-- HEADER -->
+  <header class="navbar">
+    <h2>KisanConnect Local</h2>
 
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+    <nav id="navLinks">
+      <a href="index.html" data-key="navbar_home"></a>
+      <a href="register.html" data-key="navbar_register"></a>
+      <a href="login.html" data-key="navbar_login"></a>
+
+
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="mr">मराठी</option>
+      </select>
+    </nav>
+  </header>
+
+  <!-- REGISTER FORM -->
   <form id="registerForm">
-     <h1>Create Account</h1>
-    <input type="text" id="name" placeholder="Full Name" required>
 
-    <input type="text" id="phone" placeholder="Phone Number" required>
+    <h1 data-key="create_account">Create Account</h1>
 
-    <input type="password" id="password" placeholder="Password" required>
+    <input type="text" id="name" data-placeholder="full_name" placeholder="Enter Full Name"required>
 
-    <input type="text" id="village" placeholder="Village" required>
+    <input type="text" id="phone" data-placeholder="phone_number" placeholder="Phone Number" required>
 
-    <div>
-       <label id="captchaQuestion"></label>
-        <input type="number" id="captchaAnswer" placeholder="Enter answer" required> 
+    <input type="email" id="email" data-placeholder="email_placeholder" placeholder="Enter Email" required>
+
+    <input type="password" id="password" data-placeholder="password_placeholder"   placeholder="Password" required>
+
+    <input type="text" id="village" data-placeholder="village_placeholder" placeholder="Village" required>
+
+    <div class="captcha-box">
+      <label id="captchaQuestion"></label>
+      <input type="number" id="captchaAnswer" data-placeholder="captcha_placeholder" placeholder="captcha" required>
     </div>
 
-
     <select id="role" required>
-      <option value="">Select Role</option>
-      <option value="farmer">Farmer</option>
-      <option value="buyer">Buyer</option>
+      <option value="" data-key="select_role">Select</option>
+      <option value="farmer" data-key="role_farmer">Farmer</option>
+      <option value="buyer" data-key="role_buyer">Buyer</option>
     </select>
 
-    <button type="submit">Register</button>
+    <button type="submit" data-key="register_button">Register</button>
+
   </form>
 
+  <!-- Scripts -->
+  <script src="js/language.js"></script>
   <script src="js/auth.js"></script>
+
 </body>
 </html>

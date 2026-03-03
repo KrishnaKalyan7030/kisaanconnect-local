@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="farmer_dashboard_title">Farmer Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <h2>KisanConnect Local</h2>
+
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+        <nav id="navLinks">
+            <a href="../index.html" data-key="navbar_home"></a>
+            <a href="../contact.html" data-key="navbar_contact"></a>
+
+            <button id="logoutBtn" class="btn secondary" data-key="logout_button"></button>
+
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- DASHBOARD CONTENT -->
+    <section class="dashboard-container">
+
+        <h1 id="welcomeText"></h1>
+
+        <div class="dashboard-cards">
+
+            <div class="card">
+                <h3 data-key="add_product"></h3>
+                <p data-key="add_product_desc"></p>
+                <button class="btn" data-key="add_now"></button>
+            </div>
+
+            <div class="card">
+                <h3 data-key="view_products"></h3>
+                <p data-key="view_products_desc"></p>
+                <button class="btn" data-key="view_now"></button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Scripts -->
+    <script src="../js/language.js"></script>
+    <script src="../js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Orders | KisanConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<header class="navbar">
+    <h2>KisanConnect Local</h2>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-product.html" class="btn primary">+ Add Product</a>
+    </nav>
+</header>
+
+<section class="orders-container">
+
+    <div class="orders-header">
+        <h1>📦 Incoming Orders</h1>
+
+        <div class="order-controls">
+            <input type="text" placeholder="Search orders..." class="search-input">
+            <select class="filter-select">
+                <option>All</option>
+                <option>Pending</option>
+                <option>Confirmed</option>
+                <option>Delivered</option>
+                <option>Cancelled</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="orders-grid">
+
+
+
+            <div class="order-actions">
+                <button class="btn small">Mark Delivered</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- <script src="../js/auth.js"></script> -->
+<script>
+const container = document.querySelector(".orders-grid");
+
+function loadOrders() {
+    container.innerHTML = "";
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    if (orders.length === 0) {
+        container.innerHTML = "<p>No incoming orders yet.</p>";
+        return;
+    }
+
+    orders.forEach(order => {
+
+        const card = document.createElement("div");
+        card.className = "order-card";
+
+        card.innerHTML = `
+            <div class="order-top">
+                <div>
+                    <h3>${order.productName}</h3>
+                    <p>Ordered by: <strong>Buyer</strong></p>
+                </div>
+                <span class="order-status ${order.status.toLowerCase()}">
+                    ${order.status}
+                </span>
+            </div>
+
+            <div class="order-details">
+                <p>Quantity: ${order.quantity} kg</p>
+                <p>Price: ₹${order.price}</p>
+                <p>Phone: ${order.farmerPhone || "N/A"}</p>
+            </div>
+
+            <div class="order-actions">
+                ${order.status === "Pending" ? `
+                    <button onclick="updateStatus(${order.orderId}, 'Confirmed')" class="btn success small">Accept</button>
+                    <button onclick="updateStatus(${order.orderId}, 'Cancelled')" class="btn danger small">Reject</button>
+                ` : ""}
+
+                ${order.status === "Confirmed" ? `
+                    <button onclick="updateStatus(${order.orderId}, 'Delivered')" class="btn small">Mark Delivered</button>
+                ` : ""}
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function updateStatus(id, newStatus) {
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    let order = orders.find(o => o.orderId === id);
+    if(order){
+        order.status = newStatus;
+        localStorage.setItem("orders", JSON.stringify(orders));
+        loadOrders();
+    }
+}
+
+loadOrders();
+</script>
+
+</body>
+</html>

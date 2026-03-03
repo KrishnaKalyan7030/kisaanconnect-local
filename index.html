@@ -2,87 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KisanConnect Local</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="home_page_title">KisanConnect Local</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="home-page">
 
     <!-- HEADER -->
-    <header class="navbar">
-        <h2>KisanConnect Local</h2>
-        <nav>
+  <header class="navbar">
+    <!-- <h2 class="logo">KisanConnect Local</h2> -->
+       <div class="logo">KisanConnect Local</div>
+
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+    <nav id="navLinks">
+     
+       
+
             <a href="index.html">Home</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-        </nav>
-    </header>
+        <a href="register.html" id="registerLink">Register</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="contact.html">Contact</a>
+
+        <!-- Logout Button -->
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="mr">मराठी</option>
+        </select>
+       
+       
+    </nav>
+</header>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <h1>Connecting Local Farmers with Bulk Buyers</h1>
-        <p>
-            A local platform that helps farmers list their agricultural products
-            and enables bulk buyers to discover, contact, and coordinate directly.
-        </p>
+        <h1 data-key="hero_title"></h1>
+        <p data-key="hero_desc"></p>
+
         <div class="hero-buttons">
-            <a href="register.html" class="btn">Get Started</a>
-            <a href="login.html" class="btn secondary">Login</a>
+            <a href="register.html" class="btn" data-key="get_started"></a>
+            <a href="login.html" class="btn secondary" data-key="login_button"></a>
         </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="how-it-works">
-        <h2>How It Works</h2>
+        <h2 data-key="how_it_works"></h2>
+
         <div class="steps">
             <div class="step">
-                <h3>1. Farmers List Products</h3>
-                <p>Farmers add available products with quantity, location, and availability date.</p>
+                <h3 data-key="step1_title"></h3>
+                <p data-key="step1_desc"></p>
             </div>
+
             <div class="step">
-                <h3>2. Buyers Search & Contact</h3>
-                <p>Bulk buyers search nearby farmers and directly contact them.</p>
+                <h3 data-key="step2_title"></h3>
+                <p data-key="step2_desc"></p>
             </div>
+
             <div class="step">
-                <h3>3. Offline Coordination</h3>
-                <p>Buyer and farmer coordinate delivery or pickup as per mutual convenience.</p>
+                <h3 data-key="step3_title"></h3>
+                <p data-key="step3_desc"></p>
             </div>
         </div>
     </section>
 
     <!-- USERS -->
     <section class="users">
-        <h2>Who Can Use This Platform?</h2>
+        <h2 data-key="who_can_use"></h2>
+
         <div class="user-types">
             <div class="user-box">
-                <h3>Farmers</h3>
-                <p>
-                    List your produce, avoid middlemen, and connect directly with local buyers.
-                </p>
+                <h3 data-key="farmer_title"></h3>
+                <p data-key="farmer_desc"></p>
             </div>
+
             <div class="user-box">
-                <h3>Bulk Buyers</h3>
-                <p>
-                    Discover farmers, plan bulk purchases in advance, and get better pricing.
-                </p>
+                <h3 data-key="buyer_title"></h3>
+                <p data-key="buyer_desc"></p>
             </div>
         </div>
     </section>
 
     <!-- WHY US -->
     <section class="why-us">
-        <h2>Why KisanConnect Local?</h2>
+        <h2 data-key="why_title"></h2>
+
         <ul>
-            <li>✔ Local and transparent coordination</li>
-            <li>✔ No middlemen involvement</li>
-            <li>✔ Advance planning for bulk needs</li>
-            <li>✔ Simple and easy to use</li>
+            <li data-key="why_point1"></li>
+            <li data-key="why_point2"></li>
+            <li data-key="why_point3"></li>
+            <li data-key="why_point4"></li>
         </ul>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2026 KisanConnect Local | Designed for local agricultural coordination</p>
+        <p data-key="footer_text"></p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/language.js"></script>
+    <script src="login.html "></script>
+
+
+
+    
 </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Products</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1>🛒 Browse Products</h1>
+
+<div id="productsContainer" class="products-grid"></div>
+
+<script>
+
+// ===== GET SEARCH QUERY FROM DASHBOARD =====
+let searchQuery = localStorage.getItem("searchQuery") || "";
+localStorage.removeItem("searchQuery");
+
+const container = document.getElementById("productsContainer");
+
+// ===== LOAD PRODUCTS =====
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+// ===== FILTER PRODUCTS IF SEARCH USED =====
+if (searchQuery !== "") {
+    products = products.filter(product =>
+        product.name.toLowerCase().includes(searchQuery)
+    );
+}
+
+// ===== IF NO PRODUCTS =====
+if (products.length === 0) {
+    container.innerHTML = "<p>No products found.</p>";
+}
+
+// ===== DISPLAY PRODUCTS =====
+products.forEach(product => {
+
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    card.innerHTML = `
+        <img src="${product.image || '../images/default.jpg'}" 
+             style="width:100%;height:200px;object-fit:cover;">
+
+        <div class="product-content">
+            <h3>${product.name}</h3>
+            <p><strong>₹${product.price}</strong> / kg</p>
+            <p>Available: ${product.quantity} kg</p>
+            <p>Contact: ${product.phone}</p>
+
+            <div style="margin:10px 0;">
+                <label>Quantity:</label>
+                <input type="number" min="1" max="${product.quantity}" 
+                       value="1" id="qty-${product.id}" 
+                       style="width:60px;padding:5px;">
+            </div>
+
+            <button onclick="placeOrder(${product.id})" 
+                    class="btn primary">
+                Place Order
+            </button>
+        </div>
+    `;
+
+    container.appendChild(card);
+});
+
+
+// ===== PLACE ORDER FUNCTION =====
+function placeOrder(productId){
+
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    let product = products.find(p => p.id === productId);
+
+    if(!product){
+        alert("Product not found!");
+        return;
+    }
+
+    let qtyInput = document.getElementById("qty-" + productId);
+    let quantity = parseInt(qtyInput.value);
+
+    if(quantity <= 0 || quantity > product.quantity){
+        alert("Invalid quantity selected.");
+        return;
+    }
+
+    const order = {
+        orderId: Date.now(),
+        productId: product.id,
+        productName: product.name,
+        price: product.price,
+        quantity: quantity,
+        totalPrice: quantity * product.price,
+        farmerPhone: product.phone,
+        status: "Pending",
+        orderDate: new Date().toLocaleDateString()
+    };
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    orders.push(order);
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    alert("Order Placed Successfully! 🎉");
+
+    window.location.href = "view-orders.html";
+}
+
+</script>
+
+</body>
+</html>

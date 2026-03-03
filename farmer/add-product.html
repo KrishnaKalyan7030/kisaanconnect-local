@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product | KisanConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<header class="navbar">
+    <h2>KisanConnect Local</h2>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="../index.html">Home</a>
+    </nav>
+</header>
+
+<section class="form-container">
+
+    <div class="form-card">
+
+        <h1>🌾 Add New Product</h1>
+        <p>List your fresh produce for buyers</p>
+
+        <form id="addProductForm">
+
+            <!-- Image Upload -->
+            <div class="form-group">
+                <label>Product Image</label>
+                <input type="file" id="productImage" accept="image/*" required>
+                <img id="imagePreview" class="image-preview" />
+            </div>
+
+            <!-- Product Name -->
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" id="productName" placeholder="e.g. Fresh Tomatoes" required>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label>Price (₹ per kg)</label>
+                <input type="number" id="price" placeholder="Enter price" required>
+            </div>
+
+            <!-- Quantity -->
+            <div class="form-group">
+                <label>Available Quantity (kg)</label>
+                <input type="number" id="quantity" placeholder="Enter quantity" required>
+            </div>
+
+            <!-- Available Date -->
+            <div class="form-group">
+                <label>Available Till Date</label>
+                <input type="date" id="availableDate" required>
+            </div>
+
+            <!-- Available Time -->
+            <div class="form-group">
+                <label>Available Till Time</label>
+                <input type="time" id="availableTime" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label>Contact Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="description" rows="4" placeholder="Write details about your product"></textarea>
+            </div>
+
+            <button type="submit" class="btn primary full-btn">🚜 Publish Product</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="../js/auth.js"></script>
+
+<script>
+    // Image Preview
+    const imageInput = document.getElementById("productImage");
+    const preview = document.getElementById("imagePreview");
+
+    imageInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = "block";
+        }
+    });
+
+    // Form Submit (temporary frontend logic)
+    // document.getElementById("addProductForm").addEventListener("submit", function(e){
+    //     e.preventDefault();
+    //     alert("Product Published Successfully 🚀");
+    //     window.location.href = "dashboard.html";
+    // });
+
+
+
+
+document.getElementById("addProductForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const product = {
+        id: Date.now(),
+        name: document.getElementById("productName").value,
+        price: document.getElementById("price").value,
+        quantity: document.getElementById("quantity").value,
+        date: document.getElementById("availableDate").value,
+        time: document.getElementById("availableTime").value,
+        phone: document.getElementById("phone").value,
+        description: document.getElementById("description").value,
+        image: document.getElementById("imagePreview").src
+    };
+
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    products.push(product);
+    localStorage.setItem("products", JSON.stringify(products));
+
+    alert("Product Published Successfully 🚀");
+    window.location.href = "my-products.html";
+});
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
