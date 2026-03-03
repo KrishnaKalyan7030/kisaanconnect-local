@@ -295,6 +295,9 @@ button:hover {
   margin-bottom: 30px;
   color: #2e7d32;
 }
+ul{
+  list-style:none;
+}
 
 .dashboard-cards {
   display: flex;
