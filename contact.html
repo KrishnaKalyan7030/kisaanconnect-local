@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="contact_page_title">Contact | KisanConnect Local</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - KisanConnect Local</title>
+
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="contact-page">
-
-    <!-- HEADER -->
+<body>
+     <!-- HEADER -->
     <header class="navbar">
         <h2>KisanConnect Local</h2>
 
@@ -28,26 +29,19 @@
         </nav>
     </header>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <h1 data-key="contact_title"></h1>
+        <!-- //linking footer file -->
+     <div id="footer-placeholder"></div>
 
-        <p data-key="contact_desc"></p>
-
-        <div class="contact-details">
-            <p><strong data-key="contact_email_label"></strong> info@kisanconnect.local</p>
-            <p><strong data-key="contact_phone_label"></strong> +91 9876543210</p>
-            <p><strong data-key="contact_location_label"></strong> Maharashtra, India</p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p data-key="footer_text"></p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/language.js"></script>
-
-</body>
+<!-- Add this script right before the closing </body> tag -->
+<script>
+  fetch('footer.html')
+    .then(response => {
+      if (!response.ok) throw new Error("Footer file not found");
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+</script>
 </html>

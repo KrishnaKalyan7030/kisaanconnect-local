@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-key="home_page_title">KisanConnect Local</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
 
+    <link rel="stylesheet" href="css/flex.css">
   
 
     
@@ -16,7 +18,7 @@
     <!-- HEADER -->
   <header class="navbar">
     <!-- <h2 class="logo">KisanConnect Local</h2> -->
-       <div class="logo">KisanConnect Local</div>
+       <div class="logo-footer">KisanConnect Local</div>
 
     <div class="menu-toggle" id="menuToggle">&#9776;</div>
 
@@ -102,13 +104,69 @@
             <li data-key="why_point4"></li>
         </ul>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p data-key="footer_text"></p>
-    </footer>
-
-    <!-- Scripts -->
+    
+<div class="flex-div">
+    
+    <!-- Crop Information -->
+    
+    <div class="crop-info">
+    <div class="icon">🌱</div>
+    <h2>Crop Information</h2>
+    <p>
+    Get the latest guidance on crop selection, soil health, and seasonal farming practices.
+    Learn which crops grow best in your region and how to improve yield using modern techniques.
+    </p>
+    </div>
+    
+    <!-- Pesticides -->
+    
+    <div class="presticide-info">
+    <div class="icon">🧴</div>
+    <h2>Pesticides</h2>
+    <p>
+    Identify pests affecting your crops and find recommended pesticides.
+    Learn safe usage methods, dosage, and eco-friendly pest control practices to protect your harvest.
+    </p>
+    </div>
+    
+    <!-- Technology -->
+    
+    <div class="agri-tech">
+    <div class="icon">🚜</div>
+    <h2>Technology in Agriculture</h2>
+    <p>
+    Discover smart farming technologies like drip irrigation, crop monitoring, and AI-based farming tools that help increase productivity and reduce costs.
+    </p>
+    </div>
+    
+    <!-- Weather -->
+    
+    <div class="weather">
+    <div class="icon">☁️</div>
+    <h2>Current Weather</h2>
+    <p>
+    Stay updated with real-time weather forecasts including rainfall, temperature, and humidity to plan irrigation, spraying, and harvesting effectively.
+    </p>
+    </div>
+    
+</div>
+        <!-- //linking footer file -->
+       <div id="footer-placeholder"></div>
+    
+    <!-- Add this script right before the closing </body> tag -->
+    <script>
+      fetch('footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error("Footer file not found");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+    </script>
+    
+        <!-- Scripts -->
     <script src="js/language.js"></script>
     <script src="login.html "></script>
 

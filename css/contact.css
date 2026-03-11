@@ -1,0 +1,153 @@
+/* CONTACT SECTION */
+
+.contact-section{
+background:#1e8e3e;
+color:white;
+padding:80px 10%;
+position:relative;
+overflow:hidden;
+}
+
+.contact-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:50px;
+}
+
+
+
+/* //logo */
+     .logo-footer {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+  
+    
+    /* Green gradient text */
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Remove old dark background */
+    /* background-color: transparent; */
+
+    /* Soft shadow glow */
+    text-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.logo-footer:hover {
+  
+
+       transform: scale(1.05);
+    text-shadow: 0 4px 12px rgba(74, 150, 78, 0.5);
+    
+    /* 1. Remove the gradient background */
+    background: none; 
+    
+    /* 2. Re-enable the standard text fill */
+    -webkit-text-fill-color: #1f1f1f; 
+    
+    /* 3. Standard color fallback */
+    color: #656161; 
+}
+
+#farmer-img{
+    height:350px;
+    width:350px;
+    padding:10px 0px;
+}
+
+/* MENU */
+
+.menu-links h3{
+margin-bottom:15px;
+}
+
+.menu-links a{
+display:block;
+color:white;
+text-decoration:none;
+margin:8px 0;
+font-size:16px;
+}
+
+.menu-links a:hover{
+text-decoration:underline;
+}
+
+/* CONTACT INFO */
+
+.contact-info h3{
+margin-bottom:15px;
+}
+
+.contact-info p{
+margin:6px 0;
+line-height:1.5;
+}
+
+/* DOWNLOAD SECTION */
+
+.download{
+text-align:center;
+margin-top:60px;
+}
+
+.download h2{
+margin-bottom:20px;
+}
+
+.app-buttons img{
+height:50px;
+margin:10px;
+}
+
+/* SOCIAL */
+
+.social{
+margin-top:20px;
+}
+
+.social span{
+font-size:26px;
+margin:0 10px;
+cursor:pointer;
+}
+
+/* FARMER IMAGE */
+
+.farmer-img{
+position:absolute;
+right:50px;
+bottom:0;
+height:350px;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+margin-top:50px;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-container{
+flex-direction:column;
+}
+
+.farmer-img{
+display:none;
+}
+
+}

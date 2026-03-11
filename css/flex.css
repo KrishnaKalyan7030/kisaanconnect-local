@@ -1,0 +1,70 @@
+
+body{
+background:#f4f9f4;
+padding:40px;
+}
+
+/* Container */
+
+.flex-div{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+/* Cards */
+
+.flex-div div{
+background:white;
+border-radius:15px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+border-top:5px solid #2e7d32;
+}
+
+/* Hover Effect */
+
+.flex-div div:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 35px rgba(0,0,0,0.15);
+}
+
+/* Titles */
+
+h2{
+color:#1b5e20;
+margin-bottom:15px;
+font-size:20px;
+}
+
+/* Text */
+
+p{
+color:#555;
+line-height:1.6;
+font-size:15px;
+}
+
+/* Icons */
+
+.icon{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.crop-info{
+border-top-color:#2e7d32;
+}
+
+.presticide-info{
+border-top-color:#ef6c00;
+}
+
+.agri-tech{
+border-top-color:#1565c0;
+}
+
+.weather{
+border-top-color:#6a1b9a;
+}
